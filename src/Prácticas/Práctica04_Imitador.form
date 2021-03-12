@@ -32,69 +32,75 @@
           <Group type="102" attributes="0">
               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" pref="70" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-              <Component id="opcion1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="103" pref="103" max="-2" attributes="0"/>
-              <Component id="che1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="105" pref="105" max="-2" attributes="0"/>
-              <Component id="txt1" min="-2" pref="140" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-              <Component id="opcion2" min="-2" pref="93" max="-2" attributes="0"/>
-              <EmptySpace min="77" pref="77" max="-2" attributes="0"/>
-              <Component id="che2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="105" pref="105" max="-2" attributes="0"/>
-              <Component id="cbox1" min="-2" pref="140" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-              <Component id="opcion3" min="-2" pref="93" max="-2" attributes="0"/>
-              <EmptySpace min="77" pref="77" max="-2" attributes="0"/>
-              <Component id="che3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="105" pref="105" max="-2" attributes="0"/>
-              <Component id="spinner1" min="-2" pref="140" max="-2" attributes="0"/>
-          </Group>
-          <Component id="jSeparator1" min="-2" pref="589" max="-2" attributes="0"/>
-          <Group type="102" attributes="0">
-              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="opcion5" min="-2" pref="93" max="-2" attributes="0"/>
-                  <Component id="opcion4" min="-2" pref="90" max="-2" attributes="0"/>
-                  <Component id="opcion6" min="-2" pref="93" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="che6" min="-2" max="-2" attributes="0"/>
-                  <Component id="che5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="che4" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="spinner2" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                  <Component id="txt2" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                  <Component id="cbox2" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                      <Component id="opcion1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="103" pref="103" max="-2" attributes="0"/>
+                      <Component id="che1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="105" pref="105" max="-2" attributes="0"/>
+                      <Component id="txt1" min="-2" pref="140" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                      <Component id="opcion2" min="-2" pref="93" max="-2" attributes="0"/>
+                      <EmptySpace min="77" pref="77" max="-2" attributes="0"/>
+                      <Component id="che2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="105" pref="105" max="-2" attributes="0"/>
+                      <Component id="cbox1" min="-2" pref="140" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                      <Component id="opcion3" min="-2" pref="93" max="-2" attributes="0"/>
+                      <EmptySpace min="77" pref="77" max="-2" attributes="0"/>
+                      <Component id="che3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="105" pref="105" max="-2" attributes="0"/>
+                      <Component id="spinner1" min="-2" pref="140" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jSeparator1" min="-2" pref="589" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="opcion5" min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="opcion4" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="opcion6" min="-2" pref="93" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="che6" min="-2" max="-2" attributes="0"/>
+                          <Component id="che5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="che4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="spinner2" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Component id="txt2" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Component id="cbox2" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="20" max="-2" attributes="0"/>
-              <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
+              <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="opcion1" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -150,9 +156,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -236,11 +240,12 @@
     <Component class="javax.swing.JComboBox" name="cbox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Opci&#xf3;n 1"/>
+            <StringItem index="1" value="Opci&#xf3;n 2"/>
+            <StringItem index="2" value="Opci&#xf3;n 3"/>
+            <StringItem index="3" value="Opci&#xf3;n 4"/>
+            <StringItem index="4" value="Opci&#xf3;n 5"/>
           </StringArray>
         </Property>
       </Properties>
@@ -262,6 +267,7 @@
           <ComponentRef name="gbotones2"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Opcion 1"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="opcion5">
@@ -270,6 +276,7 @@
           <ComponentRef name="gbotones2"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Opcion 2"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="opcion6">
@@ -278,44 +285,56 @@
           <ComponentRef name="gbotones2"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Opcion 3"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="che4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casilla 2"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="che5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casilla 3"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="che6">
       <Properties>
         <Property name="text" type="java.lang.String" value="Casilla 1"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="che6ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt2">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cbox2">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Opci&#xf3;n 1"/>
+            <StringItem index="1" value="Opci&#xf3;n 2"/>
+            <StringItem index="2" value="Opci&#xf3;n 3"/>
+            <StringItem index="3" value="Opci&#xf3;n 4"/>
+            <StringItem index="4" value="Opci&#xf3;n 5"/>
           </StringArray>
         </Property>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JSpinner" name="spinner2">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
