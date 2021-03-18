@@ -184,6 +184,30 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
         String sDis = "";
         String sAdm = "";
         String sHor = "";
+        String sResultado = " ";
+        if (programacion.isSelected()) {
+            sProg = "S";
+        }
+        if (this.diseño.isSelected()) {
+            sDis = "S";
+        }
+        if (this.admin.isSelected()) {
+            sAdm = "S";
+        }
+
+        if (this.opwin.isSelected()) {
+            sSistemOper = "Windows";
+        }
+        if (this.oplin.isSelected()) {
+            sSistemOper = "Linux";
+        }
+        if (this.opmac.isSelected()) {
+            sSistemOper = "Mac";
+        }
+        sHor = num.getText();
+        sResultado = sSistemOper + "," + sProg + "," + sDis + "," + sAdm + "," + sHor;
+        sResultado = String.format("%s,%s,%s,%s,%s", sSistemOper, sProg, sDis, sAdm, sHor);
+        guardarResultado(sResultado);
     }//GEN-LAST:event_generarActionPerformed
 
     private void sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderStateChanged
@@ -196,7 +220,7 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
     private void guardarResultado(String sResult) {
         String sArchivo = "encuesta.csv";
         FileWriter fw;
-        
+
         try {
             fw = new FileWriter(sArchivo, Charset.forName("UTF-8"), true);
             fw.write(sResult + "\n");
