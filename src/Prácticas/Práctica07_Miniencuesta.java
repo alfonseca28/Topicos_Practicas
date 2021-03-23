@@ -7,10 +7,16 @@ package Prácticas;
 
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonModel;
+
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -257,6 +263,13 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        //Cargar la clase del driver  de la libreria del driver de MySQL
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+        } catch (Exception ex) {
+            // handle the error
+            System.out.println(ex.getMessage());
+        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
