@@ -19,6 +19,8 @@ import java.sql.SQLException;
  */
 public class Práctica07_Miniencuesta extends javax.swing.JFrame {
 
+    Connection conn = null;
+
     /**
      * Creates new form Práctica07_Miniencuesta
      */
