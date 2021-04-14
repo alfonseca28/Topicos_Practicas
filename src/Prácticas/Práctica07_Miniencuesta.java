@@ -204,7 +204,7 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
         sHor = num.getText();
         sResultado = sSistemOper + "," + sProg + "," + sDis + "," + sAdm + "," + sHor;
         sResultado = String.format("%s,%s,%s,%s,%s", sSistemOper, sProg, sDis, sAdm, sHor);
-        guardarResultado(sResultado);
+        guardarResultadoDB(sSistemOper, sProg, sDis, sAdm, Integer.parseInt(sHor));
     }//GEN-LAST:event_generarActionPerformed
 
     private void sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderStateChanged
@@ -214,15 +214,23 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
-    private void guardarResultado(String sResult) {
-        String sArchivo = "encuesta.csv";
-        FileWriter fw;//streams
+    private void guardarResultadoDB(String sSisOper, String sProgra, String sDiseno, String sAdmon, int horas) {
+        Statement stmt;
+        String sInsertStmt;
+
+        sInsertStmt = String.format("INSERT INTO respuestas (sisoper,prog,diseno,admon,horas) VALUES ('%s','%s','%s','%s',%d)", sSisOper, sProgra, sDiseno, sAdmon, horas);
+
+        System.out.println(sInsertStmt);
 
         try {
-            fw = new FileWriter(sArchivo, Charset.forName("UTF-8"), true);
-            fw.write(sResult + "\n");
-            fw.close();
-        } catch (IOException ex) {
+            if (conn == null) {
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
+                        + "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
+            }
+            stmt = conn.createStatement();
+            stmt.execute(sInsertStmt);
+
+        } catch (SQLException ex) {
             Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
