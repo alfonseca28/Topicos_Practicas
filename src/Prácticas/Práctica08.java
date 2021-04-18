@@ -26,6 +26,7 @@ public class Práctica08 extends javax.swing.JFrame {
         consultarDB();
     }
 
+    //Metodo reutilizado de busqueda de la miniencuesta, pero ahora con la funcionalidad de busqueda (query)
     private void consultarDB() {
         Statement stmt;
         String sQuery;
@@ -114,10 +115,10 @@ public class Práctica08 extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
+                        .addGap(160, 160, 160)
                         .addComponent(actualizar)
                         .addGap(34, 34, 34)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
