@@ -18,25 +18,25 @@ import javax.swing.table.DefaultTableModel;
  * @author Aarón Alfonseca
  */
 public class Práctica08 extends javax.swing.JFrame {
-    
+
     Connection conn = null;
-    
+
     public Práctica08() {
         initComponents();
         consultarDB();
     }
-    
+
     private void consultarDB() {
         Statement stmt;
         String sQuery;
         ResultSet rset;
         DefaultTableModel tabla;
         tabla = (DefaultTableModel) this.jTable1.getModel();
-        
+
         sQuery = "SELECT id, sisoper,prog,diseno,admon,horas FROM respuestas";
-        
+
         System.out.println(sQuery);
-        
+
         try {
             if (conn == null) {
                 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
@@ -48,12 +48,12 @@ public class Práctica08 extends javax.swing.JFrame {
             while (rset.next()) {
                 tabla.addRow(new Object[]{rset.getInt("id"), rset.getString("sisoper"), rset.getString("prog"), rset.getString("diseno"), rset.getString("admon"), rset.getInt("horas")});
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -143,7 +143,7 @@ public class Práctica08 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
