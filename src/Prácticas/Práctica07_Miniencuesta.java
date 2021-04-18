@@ -25,9 +25,9 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
      * Creates new form Práctica07_Miniencuesta
      */
     public Práctica07_Miniencuesta() {
-        initComponents();
-        setLocationRelativeTo(null);
-        setVisible(true);
+	  initComponents();
+	  setLocationRelativeTo(null);
+	  setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -190,108 +190,108 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void generarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarActionPerformed
-        String sSistemOper = "";
-        String sProg = "N";
-        String sDis = "N";
-        String sAdm = "N";
-        String sHor = "";
-        String sResultado = " ";
-        if (programacion.isSelected()) {
-            sProg = "S";
-        }
-        if (this.diseño.isSelected()) {
-            sDis = "S";
-        }
-        if (this.admin.isSelected()) {
-            sAdm = "S";
-        }
-        if (this.opwin.isSelected()) {
-            sSistemOper = "Windows";
-        }
-        if (this.oplin.isSelected()) {
-            sSistemOper = "Linux";
-        }
-        if (this.opmac.isSelected()) {
-            sSistemOper = "Mac";
-        }
-        sHor = num.getText();
-        sResultado = sSistemOper + "," + sProg + "," + sDis + "," + sAdm + "," + sHor;
-        sResultado = String.format("%s,%s,%s,%s,%s", sSistemOper, sProg, sDis, sAdm, sHor);
-        guardarResultadoDB(sSistemOper, sProg, sDis, sAdm, Integer.parseInt(sHor));
+	  String sSistemOper = "";
+	  String sProg = "N";
+	  String sDis = "N";
+	  String sAdm = "N";
+	  String sHor = "";
+	  String sResultado = " ";
+	  if (programacion.isSelected()) {
+		sProg = "S";
+	  }
+	  if (this.diseño.isSelected()) {
+		sDis = "S";
+	  }
+	  if (this.admin.isSelected()) {
+		sAdm = "S";
+	  }
+	  if (this.opwin.isSelected()) {
+		sSistemOper = "Windows";
+	  }
+	  if (this.oplin.isSelected()) {
+		sSistemOper = "Linux";
+	  }
+	  if (this.opmac.isSelected()) {
+		sSistemOper = "Mac";
+	  }
+	  sHor = num.getText();
+	  sResultado = sSistemOper + "," + sProg + "," + sDis + "," + sAdm + "," + sHor;
+	  sResultado = String.format("%s,%s,%s,%s,%s", sSistemOper, sProg, sDis, sAdm, sHor);
+	  guardarResultadoDB(sSistemOper, sProg, sDis, sAdm, Integer.parseInt(sHor));
     }//GEN-LAST:event_generarActionPerformed
 
     private void sliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderStateChanged
-        num.setText(Integer.toString(slider.getValue()));
+	  num.setText(Integer.toString(slider.getValue()));
     }//GEN-LAST:event_sliderStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
+	  System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Este boton redirecciona a la tabla para mostrar los resultados de la miniencuesta
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
-        Práctica08 resul = new Práctica08();
-        resul.setVisible(true);
+	  this.setVisible(false);
+	  Práctica08 resul = new Práctica08();
+	  resul.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
     private void guardarResultadoDB(String sSisOper, String sProgra, String sDiseno, String sAdmon, int horas) {
-        Statement stmt;
-        String sInsertStmt;
+	  Statement stmt;
+	  String sInsertStmt;
 
-        sInsertStmt = String.format("INSERT INTO respuestas (sisoper,prog,diseno,admon,horas) VALUES ('%s','%s','%s','%s',%d)", sSisOper, sProgra, sDiseno, sAdmon, horas);
+	  sInsertStmt = String.format("INSERT INTO respuestas (sisoper,prog,diseno,admon,horas) VALUES ('%s','%s','%s','%s',%d)", sSisOper, sProgra, sDiseno, sAdmon, horas);
 
-        System.out.println(sInsertStmt);
+	  System.out.println(sInsertStmt);
 
-        try {
-            if (conn == null) {
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
-                        + "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
-            }
-            stmt = conn.createStatement();
-            stmt.execute(sInsertStmt);
+	  try {
+		if (conn == null) {
+		    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
+				+ "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
+		}
+		stmt = conn.createStatement();
+		stmt.execute(sInsertStmt);
 
-        } catch (SQLException ex) {
-            Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
-        }
+	  } catch (SQLException ex) {
+		Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
+	  }
     }
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+	  /* Set the Nimbus look and feel */
+	  //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+	  /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+	   */
+	  try {
+		for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+		    if ("Nimbus".equals(info.getName())) {
+			  javax.swing.UIManager.setLookAndFeel(info.getClassName());
+			  break;
+		    }
+		}
+	  } catch (ClassNotFoundException ex) {
+		java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	  } catch (InstantiationException ex) {
+		java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	  } catch (IllegalAccessException ex) {
+		java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	  } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+		java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	  }
+	  //</editor-fold>
 
-        //Cargar la clase del driver  de la libreria del driver de MySQL
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-        } catch (Exception ex) {
-            // handle the error
-            System.out.println(ex.getMessage());
-        }
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Práctica07_Miniencuesta().setVisible(true);
-            }
-        });
+	  //Cargar la clase del driver  de la libreria del driver de MySQL
+	  try {
+		Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+	  } catch (Exception ex) {
+		// handle the error
+		System.out.println(ex.getMessage());
+	  }
+	  /* Create and display the form */
+	  java.awt.EventQueue.invokeLater(new Runnable() {
+		public void run() {
+		    new Práctica07_Miniencuesta().setVisible(true);
+		}
+	  });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
