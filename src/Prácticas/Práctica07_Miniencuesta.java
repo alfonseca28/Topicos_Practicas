@@ -19,18 +19,18 @@ import java.sql.SQLException;
  */
 public class Práctica07_Miniencuesta extends javax.swing.JFrame {
 
-   Connection conn = null;
+    Connection conn = null;
 
-   /**
-    * Creates new form Práctica07_Miniencuesta
-    */
-   public Práctica07_Miniencuesta() {
-	  initComponents();
-	  setLocationRelativeTo(null);
-	  setVisible(true);
-   }
+    /**
+     * Creates new form Práctica07_Miniencuesta
+     */
+    public Práctica07_Miniencuesta() {
+	   initComponents();
+	   setLocationRelativeTo(null);
+	   setVisible(true);
+    }
 
-   @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -228,71 +228,71 @@ public class Práctica07_Miniencuesta extends javax.swing.JFrame {
 	   System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-   //Este boton redirecciona a la tabla para mostrar los resultados de la miniencuesta
+    //Este boton redirecciona a la tabla para mostrar los resultados de la miniencuesta
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 	   this.setVisible(false);
 	   Práctica08 resul = new Práctica08();
 	   resul.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
-   private void guardarResultadoDB(String sSisOper, String sProgra, String sDiseno, String sAdmon, int horas) {
-	  Statement stmt;
-	  String sInsertStmt;
+    private void guardarResultadoDB(String sSisOper, String sProgra, String sDiseno, String sAdmon, int horas) {
+	   Statement stmt;
+	   String sInsertStmt;
 
-	  sInsertStmt = String.format("INSERT INTO respuestas (sisoper,prog,diseno,admon,horas) VALUES ('%s','%s','%s','%s',%d)", sSisOper, sProgra, sDiseno, sAdmon, horas);
+	   sInsertStmt = String.format("INSERT INTO respuestas (sisoper,prog,diseno,admon,horas) VALUES ('%s','%s','%s','%s',%d)", sSisOper, sProgra, sDiseno, sAdmon, horas);
 
-	  System.out.println(sInsertStmt);
+	   System.out.println(sInsertStmt);
 
-	  try {
-		 if (conn == null) {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
-					+ "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
-		 }
-		 stmt = conn.createStatement();
-		 stmt.execute(sInsertStmt);
+	   try {
+		  if (conn == null) {
+			 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
+				    + "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
+		  }
+		  stmt = conn.createStatement();
+		  stmt.execute(sInsertStmt);
 
-	  } catch (SQLException ex) {
-		 Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
-	  }
-   }
+	   } catch (SQLException ex) {
+		  Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
+	   }
+    }
 
-   public static void main(String args[]) {
-	  /* Set the Nimbus look and feel */
-	  //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-	  /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    public static void main(String args[]) {
+	   /* Set the Nimbus look and feel */
+	   //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+	   /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-	   */
-	  try {
-		 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-			if ("Nimbus".equals(info.getName())) {
-			   javax.swing.UIManager.setLookAndFeel(info.getClassName());
-			   break;
-			}
-		 }
-	  } catch (ClassNotFoundException ex) {
-		 java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  } catch (InstantiationException ex) {
-		 java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  } catch (IllegalAccessException ex) {
-		 java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-		 java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  }
-	  //</editor-fold>
+	    */
+	   try {
+		  for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+			 if ("Nimbus".equals(info.getName())) {
+				javax.swing.UIManager.setLookAndFeel(info.getClassName());
+				break;
+			 }
+		  }
+	   } catch (ClassNotFoundException ex) {
+		  java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	   } catch (InstantiationException ex) {
+		  java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	   } catch (IllegalAccessException ex) {
+		  java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	   } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+		  java.util.logging.Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+	   }
+	   //</editor-fold>
 
-	  //Cargar la clase del driver  de la libreria del driver de MySQL
-	  try {
-		 Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-	  } catch (Exception ex) {
-		 // handle the error
-		 System.out.println(ex.getMessage());
-	  }
-	  /* Create and display the form */
-	  java.awt.EventQueue.invokeLater(new Runnable() {
-		 public void run() {
-			new Práctica07_Miniencuesta().setVisible(true);
-		 }
-	  });
-   }
+	   //Cargar la clase del driver  de la libreria del driver de MySQL
+	   try {
+		  Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+	   } catch (Exception ex) {
+		  // handle the error
+		  System.out.println(ex.getMessage());
+	   }
+	   /* Create and display the form */
+	   java.awt.EventQueue.invokeLater(new Runnable() {
+		  public void run() {
+			 new Práctica07_Miniencuesta().setVisible(true);
+		  }
+	   });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox admin;
