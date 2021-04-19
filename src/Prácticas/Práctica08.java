@@ -26,7 +26,7 @@ public class Práctica08 extends javax.swing.JFrame {
         consultarDB();
     }
 
-    //Metodo reutilizado de busqueda de la miniencuesta, pero ahora con la funcionalidad de busqueda/consulta en la base de datos
+    //Metodo reutilizado de busqueda de la miniencuesta, pero ahora con la funcionalidad de consulta en la base de datos
     private void consultarDB() {
         Statement stmt;
         String sQuery;
@@ -145,11 +145,12 @@ public class Práctica08 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    //Boton de actualizar, refresca y muestra los resultados obtenidos de la miniencuesta en la tabla
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
         consultarDB();
     }//GEN-LAST:event_actualizarActionPerformed
 
+    //Boton para salir
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
