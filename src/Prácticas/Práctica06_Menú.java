@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Prácticas;
 
 import javax.swing.JFileChooser;
@@ -18,9 +13,9 @@ public class Práctica06_Menú extends javax.swing.JFrame {
      * Creates new form Práctica06_Menú
      */
     public Práctica06_Menú() {
-	  initComponents();
-	  setLocationRelativeTo(null);
-	  setVisible(true);
+        initComponents();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**
@@ -116,59 +111,59 @@ public class Práctica06_Menú extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-	  System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_SalirActionPerformed
 
     private void AbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirActionPerformed
-	  JFileChooser jfc = new JFileChooser();
-	  jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-	  int returnValue = jfc.showOpenDialog(this);
-	  if (returnValue == 0) {
+        JFileChooser jfc = new JFileChooser();
+        jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        int returnValue = jfc.showOpenDialog(this);
+        if (returnValue == 0) {
 
-	  } else {
-		JOptionPane.showMessageDialog(this, "Seleccione un archivo", "Error al seleccionar", JOptionPane.ERROR_MESSAGE);
-	  }
+        } else {
+            JOptionPane.showMessageDialog(this, "Seleccione un archivo", "Error al seleccionar", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_AbrirActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-	  JFileChooser jfc = new JFileChooser();
-	  jfc.showSaveDialog(this);
-	  jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        JFileChooser jfc = new JFileChooser();
+        jfc.showSaveDialog(this);
+        jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
     }//GEN-LAST:event_GuardarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-	  /* Set the Nimbus look and feel */
-	  //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-	  /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-	   */
-	  try {
-		for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-		    if ("Nimbus".equals(info.getName())) {
-			  javax.swing.UIManager.setLookAndFeel(info.getClassName());
-			  break;
-		    }
-		}
-	  } catch (ClassNotFoundException ex) {
-		java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  } catch (InstantiationException ex) {
-		java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  } catch (IllegalAccessException ex) {
-		java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-		java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	  }
-	  //</editor-fold>
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Práctica06_Menú.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-	  /* Create and display the form */
-	  java.awt.EventQueue.invokeLater(new Runnable() {
-		public void run() {
-		    new Práctica06_Menú().setVisible(true);
-		}
-	  });
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Práctica06_Menú().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

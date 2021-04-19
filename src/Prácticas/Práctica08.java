@@ -22,37 +22,37 @@ public class Práctica08 extends javax.swing.JFrame {
     Connection conn = null;
 
     public Práctica08() {
-	   initComponents();
-	   consultarDB();
+        initComponents();
+        consultarDB();
     }
 
     //Metodo reutilizado de busqueda de la miniencuesta, pero ahora con la funcionalidad de busqueda/consulta en la base de datos
     private void consultarDB() {
-	   Statement stmt;
-	   String sQuery;
-	   ResultSet rset;
-	   DefaultTableModel tabla;
-	   tabla = (DefaultTableModel) this.jTable1.getModel();
+        Statement stmt;
+        String sQuery;
+        ResultSet rset;
+        DefaultTableModel tabla;
+        tabla = (DefaultTableModel) this.jTable1.getModel();
 
-	   sQuery = "SELECT id, sisoper,prog,diseno,admon,horas FROM respuestas";
+        sQuery = "SELECT id, sisoper,prog,diseno,admon,horas FROM respuestas";
 
-	   System.out.println(sQuery);
+        System.out.println(sQuery);
 
-	   try {
-		  if (conn == null) {
-			 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
-				    + "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
-		  }
-		  stmt = conn.createStatement();
-		  rset = stmt.executeQuery(sQuery);
-		  tabla.setNumRows(0);
-		  while (rset.next()) {
-			 tabla.addRow(new Object[]{rset.getInt("id"), rset.getString("sisoper"), rset.getString("prog"), rset.getString("diseno"), rset.getString("admon"), rset.getInt("horas")});
-		  }
+        try {
+            if (conn == null) {
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
+                        + "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
+            }
+            stmt = conn.createStatement();
+            rset = stmt.executeQuery(sQuery);
+            tabla.setNumRows(0);
+            while (rset.next()) {
+                tabla.addRow(new Object[]{rset.getInt("id"), rset.getString("sisoper"), rset.getString("prog"), rset.getString("diseno"), rset.getString("admon"), rset.getInt("horas")});
+            }
 
-	   } catch (SQLException ex) {
-		  Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
-	   }
+        } catch (SQLException ex) {
+            Logger.getLogger(Práctica07_Miniencuesta.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -147,58 +147,58 @@ public class Práctica08 extends javax.swing.JFrame {
 
 
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
-	   consultarDB();
+        consultarDB();
     }//GEN-LAST:event_actualizarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-	   System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Este boton redirecciona para volver a realizar la miniencuesta
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-	   this.setVisible(false);
-	   Práctica07_Miniencuesta miniencuesta = new Práctica07_Miniencuesta();
-	   miniencuesta.setVisible(true);
+        this.setVisible(false);
+        Práctica07_Miniencuesta miniencuesta = new Práctica07_Miniencuesta();
+        miniencuesta.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
-	   /* Set the Nimbus look and feel */
-	   //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-	   /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-	    */
-	   try {
-		  for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-			 if ("Nimbus".equals(info.getName())) {
-				javax.swing.UIManager.setLookAndFeel(info.getClassName());
-				break;
-			 }
-		  }
-	   } catch (ClassNotFoundException ex) {
-		  java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	   } catch (InstantiationException ex) {
-		  java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	   } catch (IllegalAccessException ex) {
-		  java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	   } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-		  java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-	   }
-	   //</editor-fold>
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Práctica08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-	   //Cargar la clase del driver  de la libreria del driver de MySQL
-	   try {
-		  Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-	   } catch (Exception ex) {
-		  // handle the error
-		  System.out.println(ex.getMessage());
-	   }
+        //Cargar la clase del driver  de la libreria del driver de MySQL
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+        } catch (Exception ex) {
+            // handle the error
+            System.out.println(ex.getMessage());
+        }
 
-	   /* Create and display the form */
-	   java.awt.EventQueue.invokeLater(new Runnable() {
-		  public void run() {
-			 new Práctica08().setVisible(true);
-		  }
-	   });
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Práctica08().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
