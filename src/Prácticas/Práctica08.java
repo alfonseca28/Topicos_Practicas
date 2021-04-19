@@ -34,6 +34,7 @@ public class Práctica08 extends javax.swing.JFrame {
         DefaultTableModel tabla;
         tabla = (DefaultTableModel) this.jTable1.getModel();
 
+        System.out.println("\033[32mConectando con la base de datos...");
         sQuery = "SELECT id, sisoper,prog,diseno,admon,horas FROM respuestas";
 
         System.out.println(sQuery);
