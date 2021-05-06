@@ -1,22 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Prácticas_Sockets;
+package practicas.sockets;
 
 import java.net.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class SocketServer {
+public class SocketServer2 {
 
     int portNumber = 4444; //Integer.parseInt(args[0]);
     ServerSocket serverSocket;
 
     public static void main(String[] args) throws IOException {
-        SocketServer srv = new SocketServer();
+        SocketServer2 srv = new SocketServer2();
         srv.run();
     }
 
@@ -56,8 +51,6 @@ public class SocketServer {
 
                 // Initiate conversation with client
                 KnockKnockProtocol kkp = new KnockKnockProtocol();
-                outputLine = kkp.processInput(null);
-                out.println(outputLine);
 
                 while ((inputLine = in.readLine()) != null) {
                     outputLine = kkp.processInput(inputLine);
