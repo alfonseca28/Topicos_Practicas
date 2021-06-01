@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package multihilos;
 
 import java.net.*;
@@ -8,7 +13,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Aarón Alfonseca
+ * @Aarón Alfonseca
  */
 public class Cliente {
 
@@ -31,7 +36,7 @@ public class Cliente {
         Conexion hilo;
         Scanner consola = new Scanner(System.in);
         try {
-            this.cnx = new Socket("192.168.100.26", 4444);     //direccionIP(original): 25.0.144.56
+            this.cnx = new Socket("192.168.100.21", 4444);
 
             in = new BufferedReader(new InputStreamReader(cnx.getInputStream()));
             out = new PrintWriter(cnx.getOutputStream(), true);
