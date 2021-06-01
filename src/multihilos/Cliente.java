@@ -31,7 +31,7 @@ public class Cliente {
         Conexion hilo;
         Scanner consola = new Scanner(System.in);
         try {
-            this.cnx = new Socket("25.0.144.56", 4444);
+            this.cnx = new Socket("192.168.100.26", 4444);     //direccionIP(original): 25.0.144.56
 
             in = new BufferedReader(new InputStreamReader(cnx.getInputStream()));
             out = new PrintWriter(cnx.getOutputStream(), true);
