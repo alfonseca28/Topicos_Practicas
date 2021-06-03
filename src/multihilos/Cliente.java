@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 /**
  *
- * @Aarón Alfonseca
+ * @author Aarón Alfonseca
  */
 public class Cliente {
 

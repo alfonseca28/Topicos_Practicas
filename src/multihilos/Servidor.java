@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @Aarón Alfonseca
+ * @author Aarón Alfonseca
  */
 public class Servidor {
 
