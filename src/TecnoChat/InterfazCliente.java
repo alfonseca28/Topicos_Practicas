@@ -16,7 +16,7 @@ import org.json.JSONArray;
  *
  * @author Aarón Alfonseca
  */
-public class MainInterfaz extends javax.swing.JFrame {
+public class InterfazCliente extends javax.swing.JFrame {
     
     private static final String MESSAGE_SERVER = "message_server";
     private static final String MESSAGE_LOGIN = "message_login";
@@ -32,7 +32,7 @@ public class MainInterfaz extends javax.swing.JFrame {
     Conexion hilo;
     Boolean online = false;
     
-    public MainInterfaz() {
+    public InterfazCliente() {
         initComponents();
         sdf = new SimpleDateFormat("dd/MM/yyy HH:mm");
         
@@ -275,21 +275,23 @@ public class MainInterfaz extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MainInterfaz main = new MainInterfaz();
+                InterfazCliente main = new InterfazCliente();
                 main.setVisible(true);
             }
         });
@@ -367,9 +369,9 @@ public class MainInterfaz extends javax.swing.JFrame {
                 cnx.close();
                 online = false;
             } catch (IOException ex) {
-                Logger.getLogger(MainInterfaz.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InterruptedException ex) {
-                Logger.getLogger(MainInterfaz.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
