@@ -52,8 +52,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jDialog1 = new javax.swing.JDialog();
         usersOnline = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        lbUsuarios = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         textUsersOnline = new javax.swing.JTextPane();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -63,6 +62,10 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         lbEscribe = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         lbTecnoChat = new javax.swing.JLabel();
+        lbFondoUsuarios = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lbIcono = new javax.swing.JLabel();
+        lbTecnm = new javax.swing.JLabel();
         lbFondoChat = new javax.swing.JLabel();
         lbIconLogin = new javax.swing.JLabel();
         lbUsuario = new javax.swing.JLabel();
@@ -86,14 +89,17 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         usersOnline.setBackground(new java.awt.Color(255, 255, 255));
-        usersOnline.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Usuarios");
+        lbUsuarios.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        lbUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        lbUsuarios.setText("Usuarios en línea");
 
+        jScrollPane3.setBorder(null);
+
+        textUsersOnline.setEditable(false);
         textUsersOnline.setBackground(new java.awt.Color(255, 255, 255));
-        textUsersOnline.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 14)); // NOI18N
+        textUsersOnline.setBorder(null);
+        textUsersOnline.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 12)); // NOI18N
         textUsersOnline.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane3.setViewportView(textUsersOnline);
 
@@ -101,36 +107,38 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         usersOnline.setLayout(usersOnlineLayout);
         usersOnlineLayout.setHorizontalGroup(
             usersOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
             .addGroup(usersOnlineLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(usersOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3)
                     .addGroup(usersOnlineLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 112, Short.MAX_VALUE)))
+                        .addComponent(lbUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         usersOnlineLayout.setVerticalGroup(
             usersOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(usersOnlineLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jDialog1.getContentPane().add(usersOnline, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, -1));
+        jDialog1.getContentPane().add(usersOnline, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 56, 200, 320));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
 
         pantalla.setEditable(false);
         pantalla.setBackground(new java.awt.Color(255, 255, 255));
-        pantalla.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 14)); // NOI18N
+        pantalla.setBorder(null);
+        pantalla.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 12)); // NOI18N
         pantalla.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(pantalla);
 
-        jDialog1.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 465, 340));
+        jDialog1.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 465, 320));
 
         btnSendMessage.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         btnSendMessage.setForeground(new java.awt.Color(0, 0, 0));
@@ -144,15 +152,18 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
                 btnSendMessageActionPerformed(evt);
             }
         });
-        jDialog1.getContentPane().add(btnSendMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 71, 27));
+        jDialog1.getContentPane().add(btnSendMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 70, 22));
 
         txtmsg.setBackground(new java.awt.Color(255, 255, 255));
         txtmsg.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
         txtmsg.setForeground(new java.awt.Color(0, 0, 0));
-        jDialog1.getContentPane().add(txtmsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 378, -1));
+        txtmsg.setBorder(null);
+        txtmsg.setCaretColor(new java.awt.Color(0, 0, 0));
+        jDialog1.getContentPane().add(txtmsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 370, -1));
 
         lbEscribe.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        lbEscribe.setText("Escribe un mensaje");
+        lbEscribe.setForeground(new java.awt.Color(0, 0, 0));
+        lbEscribe.setText("Escribe un mensaje...");
         jDialog1.getContentPane().add(lbEscribe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
         btnRegresar.setBackground(new java.awt.Color(51, 204, 0));
@@ -163,14 +174,33 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jDialog1.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 410, 100, -1));
+        jDialog1.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 410, 90, -1));
 
-        lbTecnoChat.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 20)); // NOI18N
+        lbTecnoChat.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 22)); // NOI18N
+        lbTecnoChat.setForeground(new java.awt.Color(0, 0, 0));
+        lbTecnoChat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTecnoChat.setText("TecnoChat");
-        jDialog1.getContentPane().add(lbTecnoChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jDialog1.getContentPane().add(lbTecnoChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, 40));
 
-        lbFondoChat.setBackground(new java.awt.Color(0, 0, 0));
+        lbFondoUsuarios.setBackground(new java.awt.Color(51, 255, 51));
+        lbFondoUsuarios.setForeground(new java.awt.Color(51, 255, 51));
+        lbFondoUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/backgroundChat02.png"))); // NOI18N
+        jDialog1.getContentPane().add(lbFondoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 240, 450));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jDialog1.getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 428, 370, 2));
+
+        lbIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/lbIconoChat.png"))); // NOI18N
+        jDialog1.getContentPane().add(lbIcono, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 40, 40));
+
+        lbTecnm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/lbtecnmChat.png"))); // NOI18N
+        jDialog1.getContentPane().add(lbTecnm, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 40));
+
+        lbFondoChat.setBackground(new java.awt.Color(255, 255, 255));
         lbFondoChat.setForeground(new java.awt.Color(0, 0, 0));
+        lbFondoChat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/backgroundChat.png"))); // NOI18N
         jDialog1.getContentPane().add(lbFondoChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 450));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -190,12 +220,12 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         spUsuario.setBackground(new java.awt.Color(0, 255, 51));
         spUsuario.setForeground(new java.awt.Color(0, 255, 51));
         spUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 51), 2));
-        getContentPane().add(spUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 200, 2));
+        getContentPane().add(spUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 342, 200, 2));
 
         spContrasena.setBackground(new java.awt.Color(0, 255, 51));
         spContrasena.setForeground(new java.awt.Color(0, 255, 51));
         spContrasena.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 51), 2));
-        getContentPane().add(spContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 200, 2));
+        getContentPane().add(spContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 412, 200, 2));
 
         textUserName.setBackground(new java.awt.Color(0, 0, 0));
         textUserName.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
@@ -342,7 +372,6 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSendMessage;
     private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
@@ -351,11 +380,15 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel lbEscribe;
     private javax.swing.JLabel lbFondoChat;
     private javax.swing.JLabel lbFondoLogin;
+    private javax.swing.JLabel lbFondoUsuarios;
     private javax.swing.JLabel lbIconLogin;
+    private javax.swing.JLabel lbIcono;
     private javax.swing.JLabel lbIniciar;
     private javax.swing.JLabel lbSalir;
+    private javax.swing.JLabel lbTecnm;
     private javax.swing.JLabel lbTecnoChat;
     private javax.swing.JLabel lbUsuario;
+    private javax.swing.JLabel lbUsuarios;
     private javax.swing.JTextPane pantalla;
     private javax.swing.JSeparator spContrasena;
     private javax.swing.JSeparator spUsuario;
