@@ -34,9 +34,11 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
     public Cliente_Interfaz() {
         initComponents();
-        jDialog1.setSize(735, 450);
-        jDialog1.setLocationRelativeTo(null);
         setLocationRelativeTo(null);
+        setVisible(true);
+        jDialog1.setSize(730, 450);
+        jDialog1.setLocationRelativeTo(null);
+
         sdf = new SimpleDateFormat("dd MMMM HH:mm");
     }
 
@@ -58,19 +60,26 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         pantalla = new javax.swing.JTextPane();
         btnSendMessage = new javax.swing.JButton();
         txtmsg = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lbEscribe = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+        lbTecnoChat = new javax.swing.JLabel();
+        lbFondoChat = new javax.swing.JLabel();
+        lbIconLogin = new javax.swing.JLabel();
+        lbUsuario = new javax.swing.JLabel();
         textUserName = new javax.swing.JTextField();
+        lbContrasena = new javax.swing.JLabel();
         textPass = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
-        lbIconLogin = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        lbFondoLogin = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
+        jDialog1.setBackground(new java.awt.Color(0, 0, 0));
+        jDialog1.setUndecorated(true);
         jDialog1.setPreferredSize(new java.awt.Dimension(800, 400));
+        jDialog1.setResizable(false);
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         usersOnline.setBackground(new java.awt.Color(255, 255, 255));
         usersOnline.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
@@ -109,184 +118,118 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jDialog1.getContentPane().add(usersOnline, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, -1));
+
         pantalla.setEditable(false);
         pantalla.setBackground(new java.awt.Color(255, 255, 255));
         pantalla.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 12)); // NOI18N
         pantalla.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(pantalla);
 
+        jDialog1.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 465, 340));
+
         btnSendMessage.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         btnSendMessage.setForeground(new java.awt.Color(0, 0, 0));
         btnSendMessage.setText("Enviar");
         btnSendMessage.setEnabled(false);
-        btnSendMessage.setMaximumSize(new java.awt.Dimension(46, 26));
-        btnSendMessage.setMinimumSize(new java.awt.Dimension(46, 26));
+        btnSendMessage.setMaximumSize(new java.awt.Dimension(46, 25));
+        btnSendMessage.setMinimumSize(new java.awt.Dimension(46, 25));
         btnSendMessage.setPreferredSize(new java.awt.Dimension(46, 26));
         btnSendMessage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendMessageActionPerformed(evt);
             }
         });
+        jDialog1.getContentPane().add(btnSendMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 71, 27));
 
         txtmsg.setBackground(new java.awt.Color(255, 255, 255));
         txtmsg.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
         txtmsg.setForeground(new java.awt.Color(0, 0, 0));
+        jDialog1.getContentPane().add(txtmsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 378, -1));
 
-        jLabel5.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        jLabel5.setText("Escribe un mensaje");
+        lbEscribe.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        lbEscribe.setText("Escribe un mensaje");
+        jDialog1.getContentPane().add(lbEscribe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(51, 204, 0));
+        btnRegresar.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
+        jDialog1.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 410, 100, -1));
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(0, 596, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
-                        .addComponent(txtmsg, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSendMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(usersOnline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jDialog1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(249, Short.MAX_VALUE)))
-        );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(usersOnline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtmsg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSendMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(24, 24, 24))
-            .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jDialog1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(80, Short.MAX_VALUE)))
-        );
+        lbTecnoChat.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 20)); // NOI18N
+        lbTecnoChat.setText("TecnoChat");
+        jDialog1.getContentPane().add(lbTecnoChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        lbFondoChat.setBackground(new java.awt.Color(0, 0, 0));
+        lbFondoChat.setForeground(new java.awt.Color(0, 0, 0));
+        jDialog1.getContentPane().add(lbFondoChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 450));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/tecnochat_logo.png"))); // NOI18N
+        getContentPane().add(lbIconLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 25, -1, 180));
+
+        lbUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        lbUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        lbUsuario.setText("Introduce tu usuario:");
+        getContentPane().add(lbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         textUserName.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        textUserName.setForeground(new java.awt.Color(0, 0, 0));
         textUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textUserNameActionPerformed(evt);
             }
         });
+        getContentPane().add(textUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 200, -1));
+
+        lbContrasena.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        lbContrasena.setForeground(new java.awt.Color(0, 0, 0));
+        lbContrasena.setText("Introduce tu contraseña:");
+        getContentPane().add(lbContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
         textPass.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        textPass.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(textPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 200, -1));
 
-        btnLogin.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        btnLogin.setBackground(new java.awt.Color(51, 204, 0));
+        btnLogin.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 15)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(0, 0, 0));
         btnLogin.setText("Ingresar");
+        btnLogin.setBorder(null);
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 386, 149, 30));
 
-        lbIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/tecnochat_logo.png"))); // NOI18N
-
-        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Introduce tu usuario:");
-
-        jLabel4.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Introduce tu contraseña:");
-
+        btnSalir.setBackground(new java.awt.Color(255, 0, 0));
         btnSalir.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 465, 64, 25));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(174, 174, 174)
-                                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lbIconLogin))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel4)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textPass, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textUserName, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(lbIconLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(btnLogin)
-                .addGap(32, 32, 32)
-                .addComponent(btnSalir)
-                .addContainerGap())
-        );
+        lbFondoLogin.setBackground(new java.awt.Color(0, 0, 0));
+        lbFondoLogin.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(lbFondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        hilo = new Conexion(in, textUserName.getText(), new String(textPass.getPassword()));
-        hilo.start();
-        jDialog1.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnSendMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendMessageActionPerformed
         hilo.sendMessage(txtmsg.getText());
@@ -306,11 +249,18 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         Cliente_Interfaz cli = new Cliente_Interfaz();
         cli.show();
         jDialog1.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        hilo = new Conexion(in, textUserName.getText(), new String(textPass.getPassword()));
+        hilo.start();
+        jDialog1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,19 +306,22 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSendMessage;
-    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lbContrasena;
+    private javax.swing.JLabel lbEscribe;
+    private javax.swing.JLabel lbFondoChat;
+    private javax.swing.JLabel lbFondoLogin;
     private javax.swing.JLabel lbIconLogin;
+    private javax.swing.JLabel lbTecnoChat;
+    private javax.swing.JLabel lbUsuario;
     private javax.swing.JTextPane pantalla;
     private javax.swing.JPasswordField textPass;
     private javax.swing.JTextField textUserName;
