@@ -183,17 +183,17 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
         lbUsuario.setFont(new java.awt.Font("Corbel", 0, 15)); // NOI18N
         lbUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        lbUsuario.setText("USUARIO");
+        lbUsuario.setText("Usuario");
         getContentPane().add(lbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        spUsuario.setBackground(new java.awt.Color(0, 204, 0));
-        spUsuario.setForeground(new java.awt.Color(0, 204, 0));
-        spUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0), 2));
+        spUsuario.setBackground(new java.awt.Color(0, 255, 51));
+        spUsuario.setForeground(new java.awt.Color(0, 255, 51));
+        spUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 51), 2));
         getContentPane().add(spUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 200, 2));
 
-        spContrasena.setBackground(new java.awt.Color(0, 204, 0));
-        spContrasena.setForeground(new java.awt.Color(0, 204, 0));
-        spContrasena.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 0), 2));
+        spContrasena.setBackground(new java.awt.Color(0, 255, 51));
+        spContrasena.setForeground(new java.awt.Color(0, 255, 51));
+        spContrasena.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 51), 2));
         getContentPane().add(spContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 200, 2));
 
         textUserName.setBackground(new java.awt.Color(0, 0, 0));
@@ -201,6 +201,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         textUserName.setForeground(new java.awt.Color(255, 255, 255));
         textUserName.setToolTipText("Introduce tu usuario");
         textUserName.setBorder(null);
+        textUserName.setCaretColor(new java.awt.Color(255, 255, 255));
         textUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textUserNameActionPerformed(evt);
@@ -210,7 +211,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
         lbContrasena.setFont(new java.awt.Font("Corbel", 0, 15)); // NOI18N
         lbContrasena.setForeground(new java.awt.Color(255, 255, 255));
-        lbContrasena.setText("CONTRASEÑA");
+        lbContrasena.setText("Contraseña");
         getContentPane().add(lbContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         textPass.setBackground(new java.awt.Color(0, 0, 0));
@@ -218,11 +219,12 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         textPass.setForeground(new java.awt.Color(255, 255, 255));
         textPass.setToolTipText("Introduce tu contraseña");
         textPass.setBorder(null);
+        textPass.setCaretColor(new java.awt.Color(255, 255, 255));
         getContentPane().add(textPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 200, 25));
 
-        btnLogin.setBackground(new java.awt.Color(51, 204, 0));
+        btnLogin.setBackground(new java.awt.Color(0, 153, 0));
         btnLogin.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 15)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(0, 0, 0));
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("INGRESAR");
         btnLogin.setBorder(null);
         btnLogin.setBorderPainted(false);
