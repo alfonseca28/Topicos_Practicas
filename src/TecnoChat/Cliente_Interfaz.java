@@ -72,8 +72,8 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         lbContrasena = new javax.swing.JLabel();
         textPass = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
-        lbSalir = new javax.swing.JLabel();
         lbIniciar = new javax.swing.JLabel();
+        lbSalir = new javax.swing.JLabel();
         lbFondoLogin = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -236,6 +236,13 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         });
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 149, 30));
 
+        lbIniciar.setBackground(new java.awt.Color(0, 0, 0));
+        lbIniciar.setFont(new java.awt.Font("Corbel Light", 0, 36)); // NOI18N
+        lbIniciar.setForeground(new java.awt.Color(255, 255, 255));
+        lbIniciar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIniciar.setText("Iniciar Sesión");
+        getContentPane().add(lbIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+
         lbSalir.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 13)); // NOI18N
         lbSalir.setForeground(new java.awt.Color(0, 0, 0));
         lbSalir.setText("     x");
@@ -247,13 +254,6 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
             }
         });
         getContentPane().add(lbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -4, 50, 20));
-
-        lbIniciar.setBackground(new java.awt.Color(0, 0, 0));
-        lbIniciar.setFont(new java.awt.Font("Corbel Light", 0, 36)); // NOI18N
-        lbIniciar.setForeground(new java.awt.Color(255, 255, 255));
-        lbIniciar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbIniciar.setText("Iniciar Sesión");
-        getContentPane().add(lbIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         lbFondoLogin.setBackground(new java.awt.Color(0, 0, 0));
         lbFondoLogin.setForeground(new java.awt.Color(0, 0, 0));
