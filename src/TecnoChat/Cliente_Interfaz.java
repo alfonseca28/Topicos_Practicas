@@ -34,8 +34,8 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
     public Cliente_Interfaz() {
         initComponents();
-        jDialog1.setSize(800, 415);
-        sdf = new SimpleDateFormat("dd/MM/yyy HH:mm");
+        jDialog1.setSize(800, 450);
+        sdf = new SimpleDateFormat("dd MMMM a las HH:mm");
 
     }
 
@@ -136,6 +136,11 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
         jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -298,6 +303,10 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

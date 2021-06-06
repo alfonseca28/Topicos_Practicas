@@ -30,10 +30,6 @@ public class Servidor {
 
     ;
     
-    
-    
-    
-    
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -60,8 +56,8 @@ public class Servidor {
             Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    // Broadcasting
 
+    // Broadcasting
     private void difundir(String id, String mensaje, String type, String user, Boolean all) {
         Conexion hilo;
         JSONObject message = new JSONObject();
@@ -130,11 +126,11 @@ public class Servidor {
             try {
                 in = new BufferedReader(new InputStreamReader(cnx.getInputStream()));
                 out = new PrintWriter(cnx.getOutputStream(), true);
-                System.out.printf("Aceptando conexion desde %s\n", cnx.getInetAddress().getHostAddress());
+                System.out.printf("Aceptando la conexión de %s\n", cnx.getInetAddress().getHostAddress());
                 while (estado != CHAT) {
                     switch (estado) {
                         case SIN_USER:
-                            status("Bienvenido, inicie sesion.", false);
+                            status("Hola, inicia sesión.", false);
                             estado = USER_IDENT;
                             break;
                         case USER_IDENT:
@@ -151,10 +147,10 @@ public class Servidor {
                                     }
                                 }
                                 if (!found) {
-                                    status("Verifique su usuario y su contraseña", false);
+                                    status("Verifica tu usuario y tu contraseña", false);
                                 } else {
                                     estado = CHAT;
-                                    status("Bienvenido", true);
+                                    status("Hola bienvenido", true);
                                 }
                             }
                             break;
@@ -164,7 +160,7 @@ public class Servidor {
                 this.padre.difundir(id, username + " ha entrado en el chat.", MESSAGE_SERVER, username, true);
                 usersOnline.add(username);
                 this.padre.shareUsersOnline(id);
-                System.out.printf("[%s] %s se ha conectado\n", cnx.getInetAddress().getHostAddress(), username);
+                System.out.printf("[%s] %s se ha conectado al servidor.\n", cnx.getInetAddress().getHostAddress(), username);
                 while ((linea = in.readLine()) != null) {
                     message = new JSONObject(linea);
                     String type = message.getString("type");
@@ -174,7 +170,7 @@ public class Servidor {
                             this.padre.difundir(this.id, message.getString("message"), MESSAGE, username, false);
                         } else {
                             this.padre.difundir(id, username + " ha abandonado chat.", MESSAGE_SERVER, username, true);
-                            System.out.printf("[%s] %s ha abandonado el chat.\n", cnx.getInetAddress().getHostAddress(), username);
+                            System.out.printf("[%s] %s ha abandonado el servidor.\n", cnx.getInetAddress().getHostAddress(), username);
                             estado = SIN_USER;
                             usersOnline.remove(username);
                             this.padre.shareUsersOnline(id);
