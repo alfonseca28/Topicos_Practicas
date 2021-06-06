@@ -79,8 +79,9 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         jDialog1.setBackground(new java.awt.Color(0, 0, 0));
+        jDialog1.setMaximumSize(new java.awt.Dimension(730, 450));
         jDialog1.setUndecorated(true);
-        jDialog1.setPreferredSize(new java.awt.Dimension(800, 400));
+        jDialog1.setPreferredSize(new java.awt.Dimension(730, 450));
         jDialog1.setResizable(false);
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
