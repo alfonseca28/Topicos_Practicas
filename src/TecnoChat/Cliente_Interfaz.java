@@ -70,7 +70,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         lbContrasena = new javax.swing.JLabel();
         textPass = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        lbSalir = new javax.swing.JLabel();
         lbFondoLogin = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -171,38 +171,44 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(290, 510));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIconLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/tecnochat_logo.png"))); // NOI18N
-        getContentPane().add(lbIconLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 25, -1, 180));
+        getContentPane().add(lbIconLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 240, 180));
 
-        lbUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        lbUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        lbUsuario.setText("Introduce tu usuario:");
-        getContentPane().add(lbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        lbUsuario.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        lbUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lbUsuario.setText("USUARIO");
+        getContentPane().add(lbUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        textUserName.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        textUserName.setForeground(new java.awt.Color(0, 0, 0));
+        textUserName.setBackground(new java.awt.Color(51, 51, 51));
+        textUserName.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        textUserName.setForeground(new java.awt.Color(255, 255, 255));
+        textUserName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
         textUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textUserNameActionPerformed(evt);
             }
         });
-        getContentPane().add(textUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 200, -1));
+        getContentPane().add(textUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 200, 25));
 
-        lbContrasena.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        lbContrasena.setForeground(new java.awt.Color(0, 0, 0));
-        lbContrasena.setText("Introduce tu contraseña:");
-        getContentPane().add(lbContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        lbContrasena.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        lbContrasena.setForeground(new java.awt.Color(255, 255, 255));
+        lbContrasena.setText("CONTRASEÑA");
+        getContentPane().add(lbContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
-        textPass.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
-        textPass.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(textPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 200, -1));
+        textPass.setBackground(new java.awt.Color(51, 51, 51));
+        textPass.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        textPass.setForeground(new java.awt.Color(255, 255, 255));
+        textPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+        getContentPane().add(textPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 200, 25));
 
         btnLogin.setBackground(new java.awt.Color(51, 204, 0));
         btnLogin.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 15)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(0, 0, 0));
-        btnLogin.setText("Ingresar");
+        btnLogin.setText("INGRESAR");
         btnLogin.setBorder(null);
         btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -210,22 +216,22 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 386, 149, 30));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 149, 30));
 
-        btnSalir.setBackground(new java.awt.Color(255, 0, 0));
-        btnSalir.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalir.setText("Salir");
-        btnSalir.setBorder(null);
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+        lbSalir.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 13)); // NOI18N
+        lbSalir.setForeground(new java.awt.Color(0, 0, 0));
+        lbSalir.setText("     x");
+        lbSalir.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lbSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbSalirMouseClicked(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 465, 64, 25));
+        getContentPane().add(lbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -4, 50, 20));
 
         lbFondoLogin.setBackground(new java.awt.Color(0, 0, 0));
         lbFondoLogin.setForeground(new java.awt.Color(0, 0, 0));
+        lbFondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/backgroundLogin.png"))); // NOI18N
         getContentPane().add(lbFondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 510));
 
         pack();
@@ -245,10 +251,6 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textUserNameActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         Cliente_Interfaz cli = new Cliente_Interfaz();
         cli.show();
@@ -261,6 +263,10 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         jDialog1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void lbSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lbSalirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -307,7 +313,6 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSendMessage;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
@@ -320,6 +325,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel lbFondoChat;
     private javax.swing.JLabel lbFondoLogin;
     private javax.swing.JLabel lbIconLogin;
+    private javax.swing.JLabel lbSalir;
     private javax.swing.JLabel lbTecnoChat;
     private javax.swing.JLabel lbUsuario;
     private javax.swing.JTextPane pantalla;
