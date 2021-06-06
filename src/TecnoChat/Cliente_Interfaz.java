@@ -35,7 +35,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     public Cliente_Interfaz() {
         initComponents();
         jDialog1.setSize(800, 450);
-        sdf = new SimpleDateFormat("dd MMMM a las HH:mm");
+        sdf = new SimpleDateFormat("dd MMMM HH:mm");
 
     }
 
@@ -287,13 +287,12 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
     private void btnSendMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendMessageActionPerformed
         hilo.sendMessage(txtmsg.getText());
-        pantalla.setText(pantalla.getText() + "[" + sdf.format(new Date()) + "] " + nombreUsuario + ": " + txtmsg.getText() + "\n");
+        pantalla.setText(pantalla.getText() + sdf.format(new Date()) + " - " + nombreUsuario + ": " + txtmsg.getText() + "\n");
         if (txtmsg.getText().equals("/salir")) {
             online = false;
             btnLogin.setEnabled(true);
             btnSendMessage.setEnabled(false);
         }
-
     }//GEN-LAST:event_btnSendMessageActionPerformed
 
     private void textUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUserNameActionPerformed
