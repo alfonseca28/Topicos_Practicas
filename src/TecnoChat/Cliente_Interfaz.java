@@ -88,12 +88,12 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         usersOnline.setBackground(new java.awt.Color(255, 255, 255));
         usersOnline.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuarios");
 
         textUsersOnline.setBackground(new java.awt.Color(255, 255, 255));
-        textUsersOnline.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 12)); // NOI18N
+        textUsersOnline.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 14)); // NOI18N
         textUsersOnline.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane3.setViewportView(textUsersOnline);
 
@@ -126,7 +126,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
         pantalla.setEditable(false);
         pantalla.setBackground(new java.awt.Color(255, 255, 255));
-        pantalla.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 12)); // NOI18N
+        pantalla.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 0, 14)); // NOI18N
         pantalla.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(pantalla);
 
