@@ -22,8 +22,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
     private static final String MESSAGE_LOGIN = "message_login";
     private static final String MESSAGE = "message";
     private static final String USERS_ONLINE = "users_online";
-    ;
-    
+
     BufferedReader in;
     SimpleDateFormat sdf;
     String nombreUsuario;
@@ -34,11 +33,10 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
     public Cliente_Interfaz() {
         initComponents();
-        setLocationRelativeTo(null);
         setVisible(true);
+        setLocationRelativeTo(null);
         jDialog1.setSize(730, 450);
         jDialog1.setLocationRelativeTo(null);
-
         sdf = new SimpleDateFormat("dd MMMM HH:mm");
     }
 
@@ -125,7 +123,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jDialog1.getContentPane().add(usersOnline, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 56, 200, 320));
+        jDialog1.getContentPane().add(usersOnline, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 56, 200, 320));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
@@ -182,8 +180,7 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         lbTecnoChat.setText("TecnoChat");
         jDialog1.getContentPane().add(lbTecnoChat, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, 40));
 
-        lbFondoUsuarios.setBackground(new java.awt.Color(51, 255, 51));
-        lbFondoUsuarios.setForeground(new java.awt.Color(51, 255, 51));
+        lbFondoUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         lbFondoUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TecnoChat/Imagenes/backgroundChat02.png"))); // NOI18N
         jDialog1.getContentPane().add(lbFondoUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 240, 450));
 
