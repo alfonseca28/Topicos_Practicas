@@ -108,10 +108,11 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
             .addGroup(usersOnlineLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(usersOnlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                     .addGroup(usersOnlineLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
                         .addComponent(lbUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 77, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         usersOnlineLayout.setVerticalGroup(
