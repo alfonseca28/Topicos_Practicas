@@ -157,7 +157,7 @@ public class Servidor {
 
                             if (!found) {
                                 estado = SIN_USER;
-                                out.println("Usuario incorrecto o no encontrado en la base de datos\n");
+                                out.println("Usuario incorrecto o no encontrado en la base de datos\n Intente con otro usuario");
                             } else {
                                 estado = PASS_PDTE;
                             }
@@ -168,7 +168,7 @@ public class Servidor {
                             if (pass.equals(passValido)) {
                                 estado = PASS_OK;
                             } else {
-                                out.println("La contraseña es incorrecta, vuelve a intentar de nuevo");
+                                out.println("La contraseña es incorrecta, vuelve a intentar de nuevo\n");
                             }
                             --intentos;
                             break;
