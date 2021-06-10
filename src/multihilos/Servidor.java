@@ -148,6 +148,7 @@ public class Servidor {
 
                                 if (rset.next()) {
                                     passValido = rset.getString("password");
+                                    found = true;
                                 }
 
                             } catch (SQLException sqle) {
