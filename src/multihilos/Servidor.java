@@ -148,7 +148,7 @@ public class Servidor {
 
                                 if (rset.next()) {
                                     passValido = rset.getString("password");
-                                    found = true;
+                                    found = true;   //Esto era lo que habia que agregar xd
                                 }
 
                             } catch (SQLException sqle) {
@@ -157,6 +157,7 @@ public class Servidor {
 
                             if (!found) {
                                 estado = SIN_USER;
+                                out.println("Usuario incorrecto o no encontrado en la base de datos\n");
                             } else {
                                 estado = PASS_PDTE;
                             }
@@ -166,6 +167,8 @@ public class Servidor {
                             pass = in.readLine();
                             if (pass.equals(passValido)) {
                                 estado = PASS_OK;
+                            } else {
+                                out.println("La contraseña es incorrecta, vuelve a intentar de nuevo");
                             }
                             --intentos;
                             break;
