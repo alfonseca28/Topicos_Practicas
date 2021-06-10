@@ -7,40 +7,29 @@ package multihilos;
 
 import java.net.*;
 import java.io.*;
-import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-// Se agregan las librerias para conectar con la BD
-import java.sql.Connection;
-import java.sql.Statement;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.ResultSet;
-import practicas.sockets.SocketServer;
 
 /**
  *
  * @author Aarón Alfonseca
  */
-public class Servidor {
+public class ServidorOld {
 
     ArrayList<Conexion> conexiones;
     ServerSocket ss;
-    Connection conn;
 
-    /*
-    String [][] usuarios = {{"hugo",  "123"},
-                            {"paco",  "345"},
-                            {"luis",  "890"},
-                            {"donald","678"}};
-     */
+    String[][] usuarios = {{"hugo", "123"},
+    {"paco", "345"},
+    {"luis", "890"},
+    {"donald", "678"}};
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                (new Servidor()).start();
+                (new ServidorOld()).start();
             }
         });
     }
@@ -51,26 +40,18 @@ public class Servidor {
         Conexion cnx;
 
         try {
-            // Se realiza una sola conexion
-            if (conn == null) {
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/encuesta?"
-                        + "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=encuesta&password=encuesta");
-            }
-
             ss = new ServerSocket(4444);
             System.out.println("Servidor iniciado, en espera de conexiones");
 
             while (true) {
                 socket = ss.accept();
-                cnx = new Conexion(this, socket, conexiones.size(), this.conn);
+                cnx = new Conexion(this, socket, conexiones.size());
                 conexiones.add(cnx);
                 cnx.start();
             }
 
         } catch (IOException ex) {
-            Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(SocketServer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServidorOld.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -91,9 +72,8 @@ public class Servidor {
 
         BufferedReader in;
         PrintWriter out;
-        Connection conn;
         Socket cnx;
-        Servidor padre;
+        ServidorOld padre;
         int numCnx = -1;
         String id = "";
 
@@ -103,26 +83,18 @@ public class Servidor {
         public final int PASS_OK = 3;
         public final int CHAT = 4;
 
-        public Conexion(Servidor padre, Socket socket, int num, Connection _conn) {
-            this.conn = _conn;
+        public Conexion(ServidorOld padre, Socket socket, int num) {
             this.cnx = socket;
             this.padre = padre;
             this.numCnx = num;
-            this.id = socket.getInetAddress().getHostAddress() + "-" + num;
+            this.id = socket.getInetAddress().getHostAddress() + num;
         }
 
         @Override
         public void run() {
             String linea = "", user = "", pass = "", mensaje = "";
-            String passValido = "";
             int estado = SIN_USER;
             int usr = -1;
-            int intentos = 3;
-
-            Statement stmt;
-            ResultSet rset;
-
-            String sQuery = "";
 
             try {
                 in = new BufferedReader(new InputStreamReader(cnx.getInputStream()));
@@ -131,7 +103,7 @@ public class Servidor {
                 System.out.printf("Aceptando conexion desde %s\n",
                         cnx.getInetAddress().getHostAddress());
 
-                while (!mensaje.toLowerCase().equals("salir") && intentos > 0) {
+                while (!mensaje.toLowerCase().equals("salir")) {
                     switch (estado) {
                         case SIN_USER:
                             out.println("Bienvenido, proporcione su usuario");
@@ -140,18 +112,11 @@ public class Servidor {
                         case USER_IDENT:
                             user = in.readLine();
                             boolean found = false;
-                            sQuery = "SELECT usuario,password FROM usuarios WHERE usuario = '" + user + "'";
-
-                            try {
-                                stmt = conn.createStatement();
-                                rset = stmt.executeQuery(sQuery);
-
-                                if (rset.next()) {
-                                    passValido = rset.getString("password");
+                            for (int i = 0; i < usuarios.length; i++) {
+                                if (user.equals(usuarios[i][0])) {
+                                    found = true;
+                                    usr = i;
                                 }
-
-                            } catch (SQLException sqle) {
-
                             }
 
                             if (!found) {
@@ -163,10 +128,9 @@ public class Servidor {
                         case PASS_PDTE:
                             out.println("Escriba el password");
                             pass = in.readLine();
-                            if (pass.equals(passValido)) {
+                            if (pass.equals(usuarios[usr][1])) {
                                 estado = PASS_OK;
                             }
-                            --intentos;
                             break;
                         case PASS_OK:
                             out.println("Autenticado!");
@@ -178,14 +142,13 @@ public class Servidor {
                                     cnx.getInetAddress().getHostAddress(),
                                     user + ":" + mensaje);
 
-                            this.padre.difundir(this.id, this.id + " | " + user + " : " + mensaje);
+                            this.padre.difundir(this.id, user + " : " + mensaje);
                             break;
                     }
                 }
                 this.cnx.close();
-                System.out.println("Cerrando conexion: " + this.id);
             } catch (IOException ex) {
-                Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ServidorOld.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
