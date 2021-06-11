@@ -148,7 +148,7 @@ public class Servidor {
 
                                 if (rset.next()) {
                                     passValido = rset.getString("password");
-                                    found = true;   //Esto era lo que habia que agregar xd
+                                    found = true;
                                 }
 
                             } catch (SQLException sqle) {
