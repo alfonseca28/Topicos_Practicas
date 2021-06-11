@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package multihilos;
+package ProyectoChat_BD;
 
 import java.net.*;
 import java.io.*;
@@ -121,6 +121,7 @@ public class ServidorOld {
 
                             if (!found) {
                                 estado = SIN_USER;
+                                out.println("Usuario incorrecto o no encontrado en la base de datos\n Intente con otro usuario\n-------------------------------------------------------------------");
                             } else {
                                 estado = PASS_PDTE;
                             }
@@ -130,10 +131,12 @@ public class ServidorOld {
                             pass = in.readLine();
                             if (pass.equals(usuarios[usr][1])) {
                                 estado = PASS_OK;
+                            } else {
+                                out.println("La contraseña es incorrecta, vuelve a intentar de nuevo\n-------------------------------------------------------------------");
                             }
                             break;
                         case PASS_OK:
-                            out.println("Autenticado!");
+                            out.println("Credenciales correctas!");
                             estado = CHAT;
                             break;
                         case CHAT:

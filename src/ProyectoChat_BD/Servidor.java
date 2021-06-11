@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package multihilos;
+package ProyectoChat_BD;
 
 import java.net.*;
 import java.io.*;
@@ -157,7 +157,9 @@ public class Servidor {
 
                             if (!found) {
                                 estado = SIN_USER;
-                                out.println("Usuario incorrecto o no encontrado en la base de datos\n Intente con otro usuario\n-------------------------------------------------------------------");
+                                out.println("Usuario incorrecto o no encontrado en la base de datos\n"
+                                        + "Intente con otro usuario"
+                                        + "\n-------------------------------------------------------------------");
                             } else {
                                 estado = PASS_PDTE;
                             }
@@ -168,13 +170,16 @@ public class Servidor {
                             if (pass.equals(passValido)) {
                                 estado = PASS_OK;
                             } else {
-                                out.println("La contraseña es incorrecta, vuelve a intentar de nuevo\n-------------------------------------------------------------------");
+                                out.println("La contraseña es incorrecta, vuelve a intentar de nuevo"
+                                        + "\n-------------------------------------------------------------------");
                             }
-                            --intentos;
+                            //--intentos;
+                            out.println("Te quedan " + --intentos + " intentos");
                             break;
                         case PASS_OK:
-                            out.println("Autenticado!");
+                            out.println("Credenciales correctas!");     //Avisa al usuario que su conexion fue correcta
                             estado = CHAT;
+                            System.out.println("Conexión aceptada");    //Muestra por el lado del servidor que se acecpto la conexion
                             break;
                         case CHAT:
                             mensaje = in.readLine();

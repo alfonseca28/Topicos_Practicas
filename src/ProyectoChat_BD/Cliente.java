@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package multihilos;
+package ProyectoChat_BD;
 
 import java.net.*;
 import java.io.*;
