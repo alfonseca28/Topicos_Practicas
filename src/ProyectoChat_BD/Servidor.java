@@ -173,8 +173,8 @@ public class Servidor {
                                 out.println("La contraseña es incorrecta, vuelve a intentar de nuevo"
                                         + "\n-------------------------------------------------------------------");
                             }
-                            //--intentos;
-                            out.println("Te quedan " + --intentos + " intentos");
+                            --intentos;
+                            //out.println("Te quedan " + --intentos + " intentos");
                             break;
                         case PASS_OK:
                             out.println("Credenciales correctas!");     //Avisa al usuario que su conexion fue correcta
