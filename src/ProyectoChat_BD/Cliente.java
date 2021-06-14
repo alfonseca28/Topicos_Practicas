@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ProyectoChat_BD;
-
+ 
 import java.net.*;
 import java.io.*;
 import java.util.logging.Level;
