@@ -81,7 +81,7 @@ public class Servidor {
         }
     }
 
-    private void shareUsersOnline(String id) {
+    private void usuariosonline(String id) {
         Conexion hilo;
         JSONObject message = new JSONObject();
         message.put("type", USERS_ONLINE);
@@ -91,7 +91,7 @@ public class Servidor {
             hilo = this.conexiones.get(i);
             if (hilo.cnx.isConnected() && hilo.estado == hilo.CHAT) {
                 hilo.send(message.toString());
-            }
+            }   
         }//To change body of generated methods, choose Tools | Templates.
     }
 
@@ -159,7 +159,7 @@ public class Servidor {
 
                 this.padre.difundir(id, username + " ha entrado en el chat.", MESSAGE_SERVER, username, true);
                 usersOnline.add(username);
-                this.padre.shareUsersOnline(id);
+                this.padre.usuariosonline(id);
                 System.out.printf("[%s] %s se ha conectado al servidor.\n", cnx.getInetAddress().getHostAddress(), username);
                 while ((linea = in.readLine()) != null) {
                     message = new JSONObject(linea);
@@ -173,7 +173,7 @@ public class Servidor {
                             System.out.printf("[%s] %s ha abandonado el servidor.\n", cnx.getInetAddress().getHostAddress(), username);
                             estado = SIN_USER;
                             usersOnline.remove(username);
-                            this.padre.shareUsersOnline(id);
+                            this.padre.usuariosonline(id);
                             break;
                         }
                     }

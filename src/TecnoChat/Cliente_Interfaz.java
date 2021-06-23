@@ -82,7 +82,6 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
         jDialog1.setBackground(new java.awt.Color(0, 0, 0));
         jDialog1.setMaximumSize(new java.awt.Dimension(730, 450));
         jDialog1.setUndecorated(true);
-        jDialog1.setPreferredSize(new java.awt.Dimension(730, 450));
         jDialog1.setResizable(false);
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -203,7 +202,6 @@ public class Cliente_Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(290, 510));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
